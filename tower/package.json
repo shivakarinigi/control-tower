@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@aws-sdk/client-controltower": "^3.577.0",
+    "@aws-sdk/client-organizations": "^3.577.0",
+    "serverless-offline": "^13.5.0"
+  }
+}

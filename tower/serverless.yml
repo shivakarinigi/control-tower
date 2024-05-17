@@ -1,0 +1,29 @@
+service: control-tower
+
+plugins:
+    - serverless-offline
+
+frameworkVersion: "3"
+
+provider:
+    name: aws
+    runtime: nodejs18.x
+    region: us-east-1
+    timeout: 30
+
+functions:
+    controlTower:
+        handler: registerOU.handler
+        # role: ${env:LAMBDA_ROLE}
+        events:
+            - http:
+                  path: cont
+                  method: post
+
+    controlTowers:
+        handler: reregisterOU.handler
+        # role: ${env:LAMBDA_ROLE}
+        events:
+            - http:
+                  path: rereg
+                  method: post
